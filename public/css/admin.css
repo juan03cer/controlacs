@@ -1,0 +1,81 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background-repeat: no-repeat;
+    background-image: url(../img/fondverde.jpg);
+    background-size: cover;
+}
+/* Estilo para el enlace de cierre de sesión */
+.cerrarsesion {
+   color: rgb(22, 188, 67);
+   font-size: 2rem;
+   
+}
+
+.botoncerrar {
+    background: transparent;
+    color: #ffffff;
+    padding: 15px 20px;
+    border: 2px solid #03f;
+    border-radius: 20px;
+    box-shadow: 0 0 8px 1px #0f0;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    float: right; /* Alinea el enlace a la derecha */
+    margin-top: none; /* Ajusta el margen superior según sea necesario */
+    margin-left: 35rem;
+    transition: background-color 0.3s; /* Agrega una transición suave al cambio de color de fondo */
+}
+nav button:hover {
+    background: #0f0;
+    border: none;
+    color: #fff;
+  }
+
+  .Perfil{
+    color: white;
+    font-size: 1rem;
+    border: 2px solid #03f ;
+    border-radius: 20px;
+    height: 30rem;
+    width: 30rem;
+    justify-content: center;
+}#iconoUsuario {
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#navegacion {
+    display: none;
+    position: absolute;
+    top: 40px;
+}
+
+nav {
+    background-color: #333;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}

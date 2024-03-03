@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+   
+    <link rel="stylesheet" href="public/css/index.css">
+    
+    
+    <link rel="stylesheet" href="public/css/admin.css">
+   
+    <body class="imagendefondo">
+        <header>
+            <!-- <img class="img-letras" src="public/img/letrasutvt.png"> -->
+            <nav>
+                <li>
+                    <i></i>
+                    <a href="/">Mi perfil </a>
+                </li>
+                <li>
+                    <i class="bi bi-journal-text"></i>
+                    <a href="registrar">Registrar Alumno</a>
+                </li>
+                
+                <li>
+                    <i class="bi bi-person-lines-fill"></i>
+                    <a href="entradas">Ver Entradas</a>
+                </li>
+                <li>
+                    <i class="bi bi-person-lines-fill"></i>
+                    <a href="registros">Registros</a>
+                </li>
+                
+            </nav>   
+        
+    <div id="iconoUsuario"></div>
+
+    <div id="navegacion">
+        <nav>
+            <ul>
+                <li><a href="#">Enlace 1</a></li>
+                <li><a href="#">Enlace 2</a></li>
+                <li><a href="#">Enlace 3</a></li>
+            </ul>
+        </nav>
+    </div>
+
+              <p 
+    <% if(login){ %>
+    <h1 class="cerrarsesion">Bienvenido: <strong><%= nombre %></strong></h1>
+    <a class="botoncerrar"href="logout"> <strong>Cerrar sesion</strong></a>
+    <%} else{ %>
+        <h1 ><strong><%= nombre %></strong></h1>
+
+    <% } %></p>
+       </header>
+    
+       <div class="Perfil">
+        <section >
+            <div class="contenido">
+
+              <h2>Mi Perfil</h2>
+              <h3>Nombre</h3>
+              <h3>Apellido paterno</h3>
+              <h3>Apellido Materno</h3>
+              <h3>Correo</h3>
+              <h3>Clave Empleado</h3>
+              <h3>Foto</h3>
+              <a class="boton" href="#">Actualizar</a>
+            </div>
+          </section>
+    </div>
+    
+
+
+    <script src="public/miperfil.js"></script>
+    
+
+</body>
+</html>

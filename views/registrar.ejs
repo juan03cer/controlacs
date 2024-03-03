@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Alumno</title>
+    <link rel="stylesheet" href="public/css/registros.css">
+    <link rel="stylesheet" href="public/css/index.css">
+
+</head>
+<body class="fondoregistro">
+    
+    <header>
+        <img class="img-letras" src="public/img/letrasutvt.png"> 
+        <nav>
+          
+            <li> 
+                <i class="bi bi-journal-text"></i> </i>
+                <a  class="barraadmin"  href="/">Mi perfil </a>
+            </li>
+            <li>
+                <i class="bi bi-journal-text"></i>
+                <a  class="barraadmin" href="registrar">Registrar Alumno</a>
+            </li>
+            
+            <li>
+                <i class="bi bi-person-lines-fill"></i>
+                <a  class="barraadmin" href="entradas">Ver Entradas</a>
+            </li>
+            <li>
+                <i class="bi bi-person-lines-fill"></i>
+                <a  class="barraadmin" href="registros">Registros</a>
+            </li>
+
+            <li>
+                <i class="bi bi-person-lines-fill"></i>
+                <a  class="barraadmin" href="cambiar-contrasena">Cambiar Contraseña</a>
+            </li>
+           
+        </nav>   
+        <img  style="width: 100px; height: 100px;" src="public/img/logo.jpg"> 
+    </header>
+   
+    <form action="alumnos" method="post" class="form-container">
+        <h1 style="width: 500px;">Registrar Alumno</h1>
+        <div class="form-group">
+            <i class="icon"></i>
+            <input type="text" name="nombre" class="input-field" required>
+            <span class="label" id="nombre">Nombre</span>
+        </div>
+        <div class="form-group" >
+            <i class="icon"></i>
+            <input type="text" name="lastname" class="input-field" required>
+            <span class="label" id="lastname">Apellidos</span>
+        </div>
+       
+        <div class="form-group">
+            <i class="icon"></i>
+            <input type="file" name="foto" class="input-field" required>
+            <span class="label" id="foto">foto</span>
+        </div>
+        <div class="form-group">
+            <i class="icon"></i>
+            <input type="number" name="matricula" class="input-field" required>
+            <span class="label" id="matricula">Matricula</span>
+        </div>
+        <div class="form-group">
+            <i class="icon"></i>
+            <input type="email" name="correo" class="input-field" required>
+            <span class="label" id="correo">correo </span>
+        </div>
+
+        <div class="form-group">
+            <i class="icon"></i>
+            <input type="password" name="password" class="input-field" required>
+            <span class="label" id="password">password </span>
+        </div>
+
+        <div class="form-group">
+            <i class="icon"></i>
+            <select name="carrera" class="input-field" required>
+                <% for (let carrera of carreras) { %>
+                    <option value="<%= carrera.id %>"><%= carrera.nombre %></option>
+                <% } %>
+            </select>
+            <span class="label" id="carrera">Carrera</span>
+        </div>
+        
+        
+
+
+        <div class="form-group">
+            <i class="icon"></i>
+            <input type="text" name="idtarjeta" class="input-field" value="<%= idTarjetaBluetooth || '' %>" required>
+
+            <span class="label" id="idtarjeta">id tarjeta</span>
+        </div>
+        
+        
+        <button type="submit" class="submit-button">Registrar Alumno</button>
+        </div>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script>
+       const socket = io();
+socket.on('connect', () => {
+    console.log('Conectado al servidor de WebSocket');
+});
+
+socket.on('idTarjetaBluetooth', (newId) => {
+    try {
+        console.log('Nuevo ID recibido:', newId);
+        document.getElementById('idtarjeta').value = newId || '';
+    } catch (error) {
+        console.error('Error al actualizar el campo:', error);
+    }
+});
+
+socket.on('updatePage', () => {
+    location.reload(); // Recargar la página
+});
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,173 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.fondoregistro {
+    background-repeat: no-repeat;
+    background-image: url(../img/fondverde.jpg);
+    background-size: cover;
+    background-position: center top;
+    min-height: 100vh; /* Cambiado a min-height */
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    background-attachment: fixed; /* Para mantener la imagen fija */
+}
+
+.form-container {
+    background-color: rgba(39, 80, 155, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en filas si no hay suficiente espacio */
+    align-items: center;
+    justify-content: space-between; /* Espaciado entre los elementos */
+    width: 400px; /* Ajusta el ancho del contenedor según tus necesidades */
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 48%; /* Ajusta el ancho de cada formulario para que se acomoden en tres filas */
+}
+
+.icon {
+    font-size: 18px;
+    color: #fff;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.label {
+    margin-top: 10px;
+    color: #fff;
+}
+
+.submit-button {
+    background-color: #0e160f;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #0e160f;
+    
+}
+
+.barraadmin{
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.containerxd {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: #3498db;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #3498db;
+    color: #fff;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #000411;
+    color: #000;
+}
+
+tbody tr:hover {
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
+}
+
+
+.btn-edit {
+    background-color: #ddeb1d;
+    color: #000000;
+    border: none;
+    padding: 8px 12px;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+.btn-delete {
+    background-color: #ff0000;
+    color: #000000;
+    border: none;
+    padding: 8px 12px;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+
+.botoncerrar {
+    background: transparent;
+    color: #ffffff;
+    padding: 15px 20px;
+    border: 2px solid #03f;
+    border-radius: 20px;
+    box-shadow: 0 0 8px 1px #0f0;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    float: right; /* Alinea el enlace a la derecha */
+    margin-top: none; /* Ajusta el margen superior según sea necesario */
+  
+}
+.btn-excel{
+    background-color: #00ff2a;
+    color: #000000;
+    border: none;
+    padding: 8px 12px;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}

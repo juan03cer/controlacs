@@ -1,0 +1,45 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background-repeat: no-repeat;
+    background-image: url(../img/fondverde.jpg);
+    background-size: cover;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.nosotros {
+    color: white;
+    text-align: center;
+    padding: 8rem;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+  
+}
+
+
+
+.izquierda{
+    text-align: left;
+}
+
+.centrado {
+    text-align: center;
+}
+
+.derecha {
+    text-align: right;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Alumno</title>
+   
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4; 
+        }
+
+        .container {
+            position: relative;
+            width: 50%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #3498db;
+            text-align: center;
+            position: relative;
+        }
+
+        .back-btn {
+            background-color: #d63107;
+            color: #ffffff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 14px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .edit-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-label {
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .form-field {
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .submit-btn {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+        }
+
+        .submit-btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Editar Alumno <button class="back-btn" onclick="goBack()">Regresar</button></h2>
+        <form action="/editar/<%= alumno.id %>" method="post" class="edit-form">
+            <input type="hidden" name="id" id="alumnoId" value="<%= alumno.id %>" class="form-field">
+            <label for="nombre" class="form-label">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" value="<%= alumno.nombre %>" required class="form-field">
+
+            <label for="apellido" class="form-label">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" value="<%= alumno.lastname %>" required class="form-field">
+
+            <label for="correo" class="form-label">Correo:</label>
+            <input type="email" id="correo" name="correo" value="<%= alumno.correo %>" required class="form-field">
+            
+            <label for="carrera" class="form-label">carrera:</label>
+            <input type="text" id="carrera" name="carrera" value="<%= alumno.carrera %>" required class="form-field">
+
+            <label for="matricula" class="form-label">Matricula:</label>
+            <input type="text" id="matricula" name="matricula" value="<%= alumno.matricula %>" required class="form-field">
+
+
+
+            <button type="submit" class="submit-btn">Guardar Cambios</button>
+        </form>
+    </div>
+
+    <script>
+        // Función para regresar a la página anterior
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

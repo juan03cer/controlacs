@@ -1,0 +1,72 @@
+.apifond{
+  background-repeat: no-repeat;
+    background-image: url(../img/api.png);
+    background-size: cover;
+    background-position: center top; 
+    height: 100vh;
+    margin: 0;
+}
+.letrasbarra li a {
+  font-size: 2.6rem; 
+}
+
+.letrasbarra:before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border: 2px solid #3498db;
+  border-radius: 12px;
+  z-index: -1;
+}
+
+.letrasbarra:hover:before {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    width: 300px;
+    padding: 20px;
+    border: 2px solid #3498db;
+    border-radius: 10px;
+    background-color: #000000;
+  }
+  
+  .container a {
+    display: block;
+    text-decoration: none;
+    padding: 15px;
+    margin-bottom: 10px;
+    color: #e7ebe9;
+    background-color: #1a0c68;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .container a:hover {
+    background-color: #802313;
+    color: #ffffff;
+    transform: scale(1.05);
+  }
+  
+  /* Estilos adicionales para resaltar el contorno y agregar sombra */
+  .container:before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 2px solid #3498db;
+    border-radius: 12px;
+    z-index: -1;
+  }
+  
+  .container:hover:before {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  

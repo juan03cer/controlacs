@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registros</title>
+    <link rel="stylesheet" href="public/css/registros.css">
+    <link rel="stylesheet" href="public/css/index.css">
+
+</head>
+<body class="fondoregistro">
+    
+    <header>
+        <img class="img-letras" src="public/img/letrasutvt.png"> 
+        <nav>
+          
+            <li> 
+                <i class="bi bi-journal-text"></i> </i>
+                <a  class="barraadmin"  href="/">Mi perfil </a>
+            </li>
+            <li>
+                <i class="bi bi-journal-text"></i>
+                <a  class="barraadmin" href="registrar">Registrar Alumno</a>
+            </li>
+            
+            <li>
+                <i class="bi bi-person-lines-fill"></i>
+                <a  class="barraadmin" href="entradas">Ver Entradas</a>
+            </li>
+            <li>
+                <i class="bi bi-person-lines-fill"></i>
+                <a  class="barraadmin" href="registros">Registros</a>
+            </li>
+
+            <li>
+                <i class="bi bi-person-lines-fill"></i>
+                <a  class="barraadmin" href="cambiar-contrasena">Cambiar Contraseña</a>
+            </li>
+           
+        </nav>   
+        <img  style="width: 100px; height: 100px;" src="public/img/logo.jpg"> 
+    </header>
+   
+    <div class="containerxd">
+        <h2>Lista de Alumnos Registrados</h2>
+        
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Correo</th>
+                    <th>Matricula</th>
+                    <th>ID tarjeta</th>
+                    <th>Carrera</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let i = 0; i < alumnos.length; i++) { %>
+                    <tr>
+                        <td><%= alumnos[i].nombre %></td>
+                        <td><%= alumnos[i].lastname %></td>
+                        <td><%= alumnos[i].correo %></td>
+                        <td><%= alumnos[i].matricula %></td>
+                        <td><%= alumnos[i].idtarjeta %></td>
+                        <td><%= alumnos[i].nombre_carrera %></td>
+                        <td>
+                            <a href="/editar/<%= alumnos[i].id %>"><button class="btn-edit">Editar</button></a>
+                            <a href="/eliminar/<%= alumnos[i].id %>"><button class="btn-delete">Eliminar</button></a>
+                            <a href="/registros/download"><button class="btn-excel">Descargar Excel</button></a>
+                        
+                        </td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+
+    
+</body>
+</html>

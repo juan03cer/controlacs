@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Registros</title>
+</head>
+<body>
+    <h1>Registros de Administrador</h1>
+    <div id="registros"></div>
+
+    <script>
+        // Realizar una solicitud GET a la API para obtener los registros de administrador
+        fetch('/registrados')
+            .then(response => response.json())
+            .then(data => {
+                // Construir el contenido HTML para mostrar los registros
+                let registrosHTML = '<table border="1"><tr><th>Nombre</th><th>Apellido</th><th>Correo</th><th>Matricula</th><th>Foto</th><th>Carrera</th></tr>';
+
+                // Iterar sobre los registros y construir las filas de la tabla
+                data.forEach(registro => {
+                    registrosHTML += `<tr>
+                                        <td>${registro.nombre}</td>
+                                        <td>${registro.lastname}</td>
+                                        <td>${registro.correo}</td>
+                                        <td>${registro.matricula}</td>
+                                        <td>${registro.foto}</td>
+                                        <td>${registro.carrera}</td>
+                                    </tr>`;
+                });
+
+                registrosHTML += '</table>';
+
+                // Insertar el contenido HTML en el elemento con id "registros"
+                document.getElementById('registros').innerHTML = registrosHTML;
+            })
+            .catch(error => console.error('Error al obtener los registros:', error));
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entradas</title>
+    <link rel="stylesheet" href="public/css/registros.css">
+    <link rel="stylesheet" href="public/css/index.css">
+    <link rel="stylesheet" href="public/css/entrada.css">
+
+</head>
+<body class="fondoregistro">
+    
+    
+    <header>
+        <img class="img-letras" src="public/img/letrasutvt.png"> 
+        <nav>
+          
+            <li> 
+                <i class="bi bi-journal-text"></i> </i>
+                <a  class="barraadmin"  href="/">Mi perfil </a>
+            </li>
+            <li>
+                <i class="bi bi-journal-text"></i>
+                <a  class="barraadmin" href="registrar">Registrar Alumno</a>
+            </li>
+            
+            <li>
+                <i class="bi bi-person-lines-fill"></i>
+                <a  class="barraadmin" href="entradas">Ver Entradas</a>
+            </li>
+            <li>
+                <i class="bi bi-person-lines-fill"></i>
+                <a  class="barraadmin" href="registros">Registros</a>
+            </li>
+
+            <li>
+                <i class="bi bi-person-lines-fill"></i>
+                <a  class="barraadmin" href="cambiar-contrasena">Cambiar Contraseña</a>
+            </li>
+           
+        </nav>   
+        <img  style="width: 100px; height: 100px;" src="public/img/logo.jpg"> 
+    </header>
+   
+    
+<div id="alumnoData">   
+    <h1>Datos de los Alumnos</h1>
+<p>ID de Tarjeta Bluetooth: <span id="idTarjetaBluetooth"></span></p>
+
+    <p>Nombre: <span id="nombre"></span></p>
+    <p>Apellido: <span id="lastname"></span></p>
+    <p>Matricula: <span id="matricula"></span></p>
+    <p>Correo: <span id="correo"></span></p>
+    <p>carrera: <span id="carrera"></span></p>
+    <!-- <img src="public/img/" alt=""> -->
+   
+   
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
+<script>
+    const socket = io();
+
+    // Actualizar ID de Tarjeta Bluetooth en tiempo real
+    socket.on('idTarjetaBluetooth', (idTarjetaBluetooth) => {
+        document.getElementById('idTarjetaBluetooth').innerText = idTarjetaBluetooth || 'Sin datos';
+    });
+
+    // Actualizar información del alumno en tiempo real
+    socket.on('alumnoData', (data) => {
+        if (data) {
+            document.getElementById('nombre').innerText = data.nombre;
+            document.getElementById('lastname').innerText = data.lastname;
+            document.getElementById('matricula').innerText = data.matricula;
+            document.getElementById('correo').innerText = data.correo;
+            document.getElementById('carrera').innerText = data.carrera;
+        } else {
+            // Maneja el caso cuando no hay datos disponibles
+            document.getElementById('nombre').innerText = 'Sin datos';
+            document.getElementById('lastname').innerText = 'Sin datos';
+            document.getElementById('matricula').innerText = 'Sin datos';
+            document.getElementById('correo').innerText = 'Sin datos';
+            document.getElementById('carrera').innerText = 'Sin datos';
+        }
+    });
+</script>
+
+
+    
+</body>
+</html>

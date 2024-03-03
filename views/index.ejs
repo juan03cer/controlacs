@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="public/css/registros.css">
+    <link rel="stylesheet" href="public/css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="fondoregistro">
+    
+    <header>
+        <img class="img-letras" src="public/img/letrasutvt.png"> 
+        <nav>
+            
+           <h3><strong>Bienvenido: <%= nombre %></strong> </h3>
+            <li> 
+                <i class="bi bi-journal-text"></i> </i>
+                <a  class="barraadmin"  href="/">Mi perfil </a>
+            </li>
+            <li>
+                <i class="bi bi-journal-text"></i>
+                <a  class="barraadmin" href="registrar">Registrar Alumno</a>
+            </li>
+            
+            <li>
+                <i class="bi bi-person-lines-fill"></i>
+                <a  class="barraadmin" href="entradas">Ver Entradas</a>
+            </li>
+            <li>
+                <i class="bi bi-person-lines-fill"></i>
+                <a  class="barraadmin" href="registros">Registros</a>
+            </li>
+
+            <li>
+                <i class="bi bi-person-lines-fill"></i>
+                <a  class="barraadmin" href="cambiar-contrasena">Cambiar Contraseña</a>
+            </li>
+            
+            
+        </nav>   
+        <p 
+<% if(login){ %>
+<h1 class="cerrarsesion"> </h1>
+<a class="botoncerrar"href="logout"> <strong>Cerrar sesion</strong></a>
+<%} else{ %>
+    <h1 ><strong><%= nombre %></strong></h1>
+
+<% } %></p>
+</header>
+<div>
+  <% if (login) { %>
+    <img src="public/img/admin/<%= foto %>" alt="Foto de perfil"> 
+  <% } %>
+</div>
+
+
+
+
+
+  
+
+
+</body>
+</html>
+
+
+

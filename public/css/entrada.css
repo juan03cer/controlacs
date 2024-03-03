@@ -1,0 +1,20 @@
+
+
+
+#alumnoData {
+    background: linear-gradient(45deg, #184981, #1e5f91); /* Fondo degradado azul */
+    border: 1px solid #555; /* Borde más oscuro */
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    text-align: center; /* Centro de los datos */
+}
+
+#alumnoData p {
+    margin: 10px 0;
+}
+
+#alumnoData span {
+    font-weight: bold;
+    color: #fff; /* Texto blanco */
+}
